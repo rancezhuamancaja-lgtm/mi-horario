@@ -13,12 +13,70 @@
     <header class="app-header">
         <h1>Mi Horario</h1>
         <span id="estado-actual" class="badge">Cargando...</span>
+        <button id="btn-agregar" class="btn-agregar">+ Agregar evento</button>
     </header>
 
     <main id="vista-semana" class="semana">
         <!-- Aquí vamos a renderizar los días con JavaScript -->
     </main>
 
+    <div id="modal-overlay" class="modal-overlay oculto">
+  <div class="modal">
+    <h2 id="modal-titulo">Nuevo evento</h2>
+
+    <label>Título</label>
+    <input type="text" id="input-titulo" placeholder="Ej: Box + correr">
+
+    <label>Categoría</label>
+    <select id="input-categoria">
+      <option value="estudio">Estudio</option>
+      <option value="trabajo">Trabajo</option>
+      <option value="ejercicio">Ejercicio</option>
+    </select>
+
+    <label>Días</label>
+    <div class="dias-checkbox" id="dias-checkbox">
+      <label><input type="checkbox" value="Lun"> Lun</label>
+      <label><input type="checkbox" value="Mar"> Mar</label>
+      <label><input type="checkbox" value="Mie"> Mie</label>
+      <label><input type="checkbox" value="Jue"> Jue</label>
+      <label><input type="checkbox" value="Vie"> Vie</label>
+      <label><input type="checkbox" value="Sab"> Sab</label>
+      <label><input type="checkbox" value="Dom"> Dom</label>
+    </div>
+
+    <div class="fila-doble">
+      <div>
+        <label>Hora inicio</label>
+        <input type="time" id="input-hora-inicio">
+      </div>
+      <div>
+        <label>Hora fin</label>
+        <input type="time" id="input-hora-fin">
+      </div>
+    </div>
+
+    <div class="fila-doble">
+      <div>
+        <label>Fecha inicio (opcional)</label>
+        <input type="date" id="input-fecha-inicio">
+      </div>
+      <div>
+        <label>Fecha fin (opcional)</label>
+        <input type="date" id="input-fecha-fin">
+      </div>
+    </div>
+
+    <label>Notas</label>
+    <input type="text" id="input-notas" placeholder="Opcional">
+
+    <div class="modal-botones">
+      <button id="btn-eliminar" class="btn-eliminar oculto">Eliminar</button>
+      <button id="btn-cancelar">Cancelar</button>
+      <button id="btn-guardar">Guardar</button>
+    </div>
+  </div>
+</div>
     <script src="js/app.js"></script>
 </body>
 
