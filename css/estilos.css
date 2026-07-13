@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.badge {
+  background: #e6f1fb;
+  color: #185fa5;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.semana {
+  padding: 1rem;
+}
+
+.semana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.dia-columna {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dia-titulo {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.evento-bloque {
+  border-radius: 8px;
+  padding: 8px 6px;
+  font-size: 0.75rem;
+}
+
+.evento-bloque.estudio {
+  background: #e6f1fb;
+  color: #185fa5;
+}
+
+.evento-bloque.trabajo {
+  background: #eaf3de;
+  color: #3b6d11;
+}
+
+.evento-bloque.ejercicio {
+  background: #fcebeb;
+  color: #a32d2d;
+}
+
+.evento-bloque.vacio {
+  background: #f4f4f4;
+  color: #999;
+  text-align: center;
+}
