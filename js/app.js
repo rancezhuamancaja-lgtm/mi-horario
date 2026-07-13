@@ -1,5 +1,7 @@
 // ===== MODELO DE DATOS =====
-const eventos = [
+const CLAVE_STORAGE = "mi-horario-eventos";
+
+const eventosPorDefecto = [
   {
     id: "evt_001",
     titulo: "Box + correr",
@@ -34,6 +36,20 @@ const eventos = [
     notas: "Duración 2h, hora exacta pendiente"
   }
 ];
+
+function cargarEventos() {
+  const guardado = localStorage.getItem(CLAVE_STORAGE);
+  if (guardado) {
+    return JSON.parse(guardado);
+  }
+  return eventosPorDefecto;
+}
+
+function guardarEventosEnStorage() {
+  localStorage.setItem(CLAVE_STORAGE, JSON.stringify(eventos));
+}
+
+let eventos = cargarEventos();
 
 console.log("Eventos cargados:", eventos);
 
@@ -205,6 +221,7 @@ function guardarEvento() {
     eventos.push(eventoData);
   }
 
+  guardarEventosEnStorage();
   cerrarFormulario();
   renderizarSemana();
 }
@@ -212,6 +229,7 @@ function guardarEvento() {
 function eliminarEvento() {
   const index = eventos.findIndex(ev => ev.id === idEnEdicion);
   if (index !== -1) eventos.splice(index, 1);
+  guardarEventosEnStorage();
   cerrarFormulario();
   renderizarSemana();
 }
